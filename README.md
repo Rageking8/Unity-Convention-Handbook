@@ -36,7 +36,7 @@ Added PlayerController script.
 - Manually wrapping is to be done should a line need more than 80 characters, as such:
     - Operator to be left at the previous line.
     - Where `L` is the original line, `L + 1` should have a `+1` indent relative to `L`.
-    - When more than 1 round of wrapping is needed, `L + 2` and beyond should keep the same indentaion level as `L + 1`.
+    - When more than 1 round of wrapping is needed, `L + 2` and beyond should keep the same indentation level as `L + 1`.
 
     **Example(s):**
     ```csharp
