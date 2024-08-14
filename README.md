@@ -190,47 +190,57 @@ private float _hungerDrainPerSec = 1f;
 
 ---
 
-## 11. Method declaration order
-- Methods to be declared in the following order:
-    - Public.
-    - Protected.
-    - Private.
+## 11. Type declarations
+- Keep to 1 type declaration per source file.
+- Nested types can be allowed depending on circumstance.
 
 ---
 
-## 12. Variable declaration order
-- Variables to be declared in the following order:
+## 12. Declaration order
+- Nested types should be first regardless of visibility.
+
+- Next, variables and properties to be declared in the following order:
+    - Properties first then variables.
     - Public (should have 1 empty line above and below it, except when the top or bottom is an opening or closing brace).
     - Private and serialized (whole block should have 1 empty line above and below it, except when the top or bottom is an opening or closing brace).
     - Private and for internal use only (group all together with the whole group having 1 empty line above and below it, except when the top or bottom is an opening or closing brace).
+
+- Lastly, methods to be declared in the following order:
+    - Public.
+    - Protected.
+    - Private.
 
 **Example(s):**
 ```csharp
 public class PlayerVitals : MonoBehaviour
 {
+    public class NestedType
+    {
+        ...
+    }
+
+    public int IntProp { get; private set; }
+
     public float StinkyFloat = 0f;
 
     [SerializeField]
     [Range(0f, 5f)]
     private float _hungerDrainPerSec = 1f;
 
-    [SerializeField]
-    [Range(0f, 5f)]
-    private float _healthDrainPerSec = 0f;
-
-    // Amount of health drain per second
-    // when hunger is 0
-    [SerializeField]
-    [Range(0f, 10f)]
-    private float _healthHungerZero = 5f;
-
-    [SerializeField]
-    private UICanvas.ActiveIn _updateActiveIn;
-
     private GameReset _gameReset;
     private UIManager _manager;
 
-    private void SomeFunction()
+    public void PublicFunction()
+    {
+        ...
+    }
+
+    protected void ProtectedFunction()
+    {
+        ...
+    }
+
+    private void Update()
     {
         ...
     }
@@ -306,9 +316,3 @@ public class StateMachine<TSelfID, TStateID>
     ...
 }
 ```
-
----
-
-## 18. Type declarations
-- Keep to 1 type declaration per source file.
-- Nested types can be allowed depending on circumstance.
