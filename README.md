@@ -49,6 +49,27 @@ Added PlayerController script.
 
 ## 4. Access modifiers
 - Explicit access modifier for all declarations, except within interfaces.
+- Unity message methods should always be private.
+- Serialized fields should always be private.
+- Should a public variable be needed, always make it a property.
+
+**Example(s):**
+```csharp
+// WRONG
+string _someName = "Name";
+
+// WRONG
+void Update()
+{
+    ...
+}
+
+// CORRECT
+private void Update()
+{
+    ...
+}
+```
 
 ---
 
@@ -283,3 +304,7 @@ public class StateMachine<TSelfID, TStateID>
     ...
 }
 ```
+
+---
+
+## 18. 
