@@ -307,4 +307,6 @@ public class StateMachine<TSelfID, TStateID>
 
 ---
 
-## 18. 
+## 18. Type declarations
+- Keep to 1 type declaration per source file.
+- Nested types can be allowed depending on circumstance.
