@@ -271,7 +271,9 @@ private void LoadKeyframes(List<int> indices)
 
 ## 15. Branch name and usage
 - Branch names should only contain lowercase letters (numbers may be permitted where appropriate) and be delimited by a single dash (`-`).
+- Main branch should be the `dev` branch.
 - Do all development on the respective topic or feature branch, else commit to the `dev` branch.
+- Do not create branches based on members (branch name should not contain anyone's name).
 - `main` branch should only contain "release ready" builds that have been sufficiently tested.
 
 **Example(s):**
